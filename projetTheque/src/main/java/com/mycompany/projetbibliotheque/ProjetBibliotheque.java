@@ -5,15 +5,16 @@
 package com.mycompany.projetbibliotheque;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  * @author erwan
  */
 public class ProjetBibliotheque {
-
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        ArrayList<Livre> laBibliothequeDeBonta = new ArrayList<Livre>();
+        ArrayList<Livre> bibliotheque = new ArrayList<Livre>();
         ArrayList<Collection> collections = new ArrayList<>();
         // Création des collections
         Collection tintin = new Collection("Tintin");
@@ -102,66 +103,66 @@ public class ProjetBibliotheque {
         Livre morris5 = new Livre("Lucky Luke, Tome 5 : Lucky Luke contre Pat Poker", 46, "Dupuis", "BD");
         
         // Ajout des livres à la bibliothèque de Bonta
-        laBibliothequeDeBonta.add(tintin1);
-        laBibliothequeDeBonta.add(tintin2);
-        laBibliothequeDeBonta.add(tintin3);
-        laBibliothequeDeBonta.add(tintin4);
-        laBibliothequeDeBonta.add(tintin5);
-        laBibliothequeDeBonta.add(jules1);
-        laBibliothequeDeBonta.add(jules2);
-        laBibliothequeDeBonta.add(jules3);
-        laBibliothequeDeBonta.add(jules4);
-        laBibliothequeDeBonta.add(jules5);
-        laBibliothequeDeBonta.add(stExupery1);
-        laBibliothequeDeBonta.add(stExupery2);
-        laBibliothequeDeBonta.add(stExupery3);
-        laBibliothequeDeBonta.add(stExupery4);
-        laBibliothequeDeBonta.add(stExupery5);
-        laBibliothequeDeBonta.add(houellebecq1);
-        laBibliothequeDeBonta.add(houellebecq2);
-        laBibliothequeDeBonta.add(houellebecq3);
-        laBibliothequeDeBonta.add(houellebecq4);
-        laBibliothequeDeBonta.add(houellebecq5);
-        laBibliothequeDeBonta.add(hugo1);
-        laBibliothequeDeBonta.add(hugo2);
-        laBibliothequeDeBonta.add(hugo3);
-        laBibliothequeDeBonta.add(hugo4);
-        laBibliothequeDeBonta.add(hugo5);
-        laBibliothequeDeBonta.add(rimbaud1);
-        laBibliothequeDeBonta.add(rimbaud2);
-        laBibliothequeDeBonta.add(rimbaud3);
-        laBibliothequeDeBonta.add(rimbaud4);
-        laBibliothequeDeBonta.add(rimbaud5);
-        laBibliothequeDeBonta.add(king1);
-        laBibliothequeDeBonta.add(king2);
-        laBibliothequeDeBonta.add(king3);
-        laBibliothequeDeBonta.add(king4);
-        laBibliothequeDeBonta.add(king5);
-        laBibliothequeDeBonta.add(kirkman1);
-        laBibliothequeDeBonta.add(kirkman2);
-        laBibliothequeDeBonta.add(kirkman3);
-        laBibliothequeDeBonta.add(kirkman4);
-        laBibliothequeDeBonta.add(kirkman5);
-        laBibliothequeDeBonta.add(moore1);
-        laBibliothequeDeBonta.add(moore2);
-        laBibliothequeDeBonta.add(moore3);
-        laBibliothequeDeBonta.add(moore4);
-        laBibliothequeDeBonta.add(moore5);
-        laBibliothequeDeBonta.add(goscinny1);
-        laBibliothequeDeBonta.add(goscinny2);
-        laBibliothequeDeBonta.add(goscinny3);
-        laBibliothequeDeBonta.add(goscinny4);
-        laBibliothequeDeBonta.add(goscinny5);
-        laBibliothequeDeBonta.add(franquin1);
-        laBibliothequeDeBonta.add(franquin2);
-        laBibliothequeDeBonta.add(franquin3);
-        laBibliothequeDeBonta.add(franquin4);
-        laBibliothequeDeBonta.add(franquin5);
-        laBibliothequeDeBonta.add(morris1);
-        laBibliothequeDeBonta.add(morris2);
-        laBibliothequeDeBonta.add(morris3);
-        laBibliothequeDeBonta.add(morris4);
-        laBibliothequeDeBonta.add(morris5);
+        bibliotheque.add(tintin1);
+        bibliotheque.add(tintin2);
+        bibliotheque.add(tintin3);
+        bibliotheque.add(tintin4);
+        bibliotheque.add(tintin5);
+        bibliotheque.add(jules1);
+        bibliotheque.add(jules2);
+        bibliotheque.add(jules3);
+        bibliotheque.add(jules4);
+        bibliotheque.add(jules5);
+        bibliotheque.add(stExupery1);
+        bibliotheque.add(stExupery2);
+        bibliotheque.add(stExupery3);
+        bibliotheque.add(stExupery4);
+        bibliotheque.add(stExupery5);
+        bibliotheque.add(houellebecq1);
+        bibliotheque.add(houellebecq2);
+        bibliotheque.add(houellebecq3);
+        bibliotheque.add(houellebecq4);
+        bibliotheque.add(houellebecq5);
+        bibliotheque.add(hugo1);
+        bibliotheque.add(hugo2);
+        bibliotheque.add(hugo3);
+        bibliotheque.add(hugo4);
+        bibliotheque.add(hugo5);
+        bibliotheque.add(rimbaud1);
+        bibliotheque.add(rimbaud2);
+        bibliotheque.add(rimbaud3);
+        bibliotheque.add(rimbaud4);
+        bibliotheque.add(rimbaud5);
+        bibliotheque.add(king1);
+        bibliotheque.add(king2);
+        bibliotheque.add(king3);
+        bibliotheque.add(king4);
+        bibliotheque.add(king5);
+        bibliotheque.add(kirkman1);
+        bibliotheque.add(kirkman2);
+        bibliotheque.add(kirkman3);
+        bibliotheque.add(kirkman4);
+        bibliotheque.add(kirkman5);
+        bibliotheque.add(moore1);
+        bibliotheque.add(moore2);
+        bibliotheque.add(moore3);
+        bibliotheque.add(moore4);
+        bibliotheque.add(moore5);
+        bibliotheque.add(goscinny1);
+        bibliotheque.add(goscinny2);
+        bibliotheque.add(goscinny3);
+        bibliotheque.add(goscinny4);
+        bibliotheque.add(goscinny5);
+        bibliotheque.add(franquin1);
+        bibliotheque.add(franquin2);
+        bibliotheque.add(franquin3);
+        bibliotheque.add(franquin4);
+        bibliotheque.add(franquin5);
+        bibliotheque.add(morris1);
+        bibliotheque.add(morris2);
+        bibliotheque.add(morris3);
+        bibliotheque.add(morris4);
+        bibliotheque.add(morris5);
         
         // Ajout des livres dans les collections
         tintin.ajouterLivre(tintin1);
@@ -253,8 +254,43 @@ public class ProjetBibliotheque {
         collections.add(franquin);
         collections.add(morris);
         
-        
-        afficherCollections(collections);
+        int choix = 0;
+        do {
+            System.out.println("Que souhaitez-vous faire ?");
+            System.out.println("1 - Ajouter un livre à la bibliothèque");
+            System.out.println("2 - Afficher les titres des livres d'une collection");
+            System.out.println("3 - Afficher les livres d'un genre");
+            System.out.println("4 - Afficher le nombre total de livres dans la bibliothèque");
+            System.out.println("5 - Afficher les livres ayant un maximum de pages");
+            System.out.println("0 - Quitter");
+
+            choix = scanner.nextInt();
+            scanner.nextLine(); // Consommer le retour à la ligne
+
+            switch (choix) {
+                case 1:
+                    // ajouterLivre();
+                    break;
+                case 2:
+                    // afficherLivresCollection();
+                    break;
+                case 3:
+                    // afficherLivresGenre();
+                    break;
+                case 4:
+                    // afficherNombreTotalLivres();
+                    break;
+                case 5:
+                    // afficherLivresMaxPages();
+                    break;
+                case 0:
+                    System.out.println("Au revoir !");
+                    break;
+                default:
+                    System.out.println("Choix invalide.");
+                    break;
+            }
+        } while (choix != 0);
     }
     public static void afficherCollections(ArrayList<Collection> collections) {
         for (Collection collection : collections) {

@@ -5,13 +5,17 @@
 package com.mycompany.projetdex;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  * @author erwan
  */
 public class ProjetDex {
- 
+    private static ArrayList<Version> versions = new ArrayList<Version>();
+    private static ArrayList<Pokemon> pokemons = new ArrayList<Pokemon>();
+    private static Scanner scanner = new Scanner(System.in);
+    
     public static void main(String[] args) {
         Version EmeraudeRouge = new Version("Emeraude Rouge");
         Version RubisRugby = new Version("Rubis Rugby");
@@ -85,7 +89,38 @@ public class ProjetDex {
         GigaChen.addPokemon(fantominus);
         GigaChen.addPokemon(abra);
 
+        while (true) {
+            System.out.println("Menu :");
+            System.out.println("1. Créer un Pokemon et l'ajouter au starter d'une version");
+            System.out.println("2. Afficher le nom des Pokémons starter d'une version");
+            System.out.println("3. Afficher tous les Pokémons d'un type");
+            System.out.println("4. Afficher le nombre total de Pokémons");
+            System.out.println("5. Quitter");
 
+            int choix = scanner.nextInt();
+            scanner.nextLine(); // consomme le retour chariot
+
+            switch (choix) {
+                case 1:
+                    // ajouterPokemon(); 
+                    break;
+                case 2:
+                    // afficherStarters();
+                    break;
+                case 3:
+                    // afficherParType();
+                    break;
+                case 4:
+                    // afficherNbPokemon();
+                    break;
+                case 5:
+                    System.out.println("Au revoir !");
+                    return;
+                default:
+                    System.out.println("Choix invalide !");
+            }
+            System.out.println(); // saut de ligne
+        }
 
     }
 }
