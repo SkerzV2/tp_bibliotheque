@@ -20,6 +20,7 @@ public class Livre {
         this.nbPage = nbPage;
         this.editeur = editeur;
         this.genre = genre;
+        this.compteurLivre +=1;
     }
 
     public String getTitre() {
@@ -52,6 +53,10 @@ public class Livre {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+    public static int afficheNbLivre(){
+        return compteurLivre;
+        
     }
 
     @Override

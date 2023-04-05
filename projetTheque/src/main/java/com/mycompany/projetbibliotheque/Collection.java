@@ -30,8 +30,6 @@ public class Collection {
     public ArrayList<Livre> getLivres() {
         return livreDeLaCollection;
     }
-
- 
     
     public void ajouterLivre(Livre livre) {
         this.livreDeLaCollection.add(livre);;

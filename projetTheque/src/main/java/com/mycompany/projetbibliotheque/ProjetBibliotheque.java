@@ -29,6 +29,7 @@ public class ProjetBibliotheque {
         Collection goscinny = new Collection("René Goscinny");
         Collection franquin = new Collection("André Franquin");
         Collection morris = new Collection("Morris");
+        Collection caca = new Collection("caca");
         
         Livre tintin1 = new Livre("Tintin au pays des Soviets", 144, "Casterman", "BD");
         Livre tintin2 = new Livre("Tintin au Congo", 62, "Casterman", "BD");
@@ -253,6 +254,7 @@ public class ProjetBibliotheque {
         collections.add(goscinny);
         collections.add(franquin);
         collections.add(morris);
+        collections.add(caca);
         
         int choix = 0;
         do {
@@ -266,19 +268,69 @@ public class ProjetBibliotheque {
 
             choix = scanner.nextInt();
             scanner.nextLine(); // Consommer le retour à la ligne
-
+            
+        
+            
             switch (choix) {
                 case 1:
                     // ajouterLivre();
+                    System.out.println("entrer un titre");
+                    Scanner input1 = new Scanner(System.in);
+                    String titre = input1.next();
+                    System.out.println("entrer un nombre de pages");
+                    Scanner input2 = new Scanner(System.in);
+                    int nbPages = Integer.parseInt(input2.next());
+                    System.out.println("entrer un editeur");
+                    Scanner input3 = new Scanner(System.in);
+                    String editeur = input3.next();
+                    System.out.println("entrer un genre");
+                    Scanner input4 = new Scanner(System.in);
+                    String genre = input4.next();
+                    Livre livre = new Livre(titre,nbPages,editeur,genre);
+                    bibliotheque.add(livre);
+                    System.out.println(bibliotheque);
                     break;
                 case 2:
-                    // afficherLivresCollection();
+                    int i = 0;
+                    for (Collection collection : collections) {
+                        i++;
+                        System.out.println(i + " - Collection: " + collection.getNom());
+                    }
+                    System.out.println("Choisissez la collection que vous voulez afficher:");
+
+                    Scanner input5 = new Scanner(System.in);
+                    int choixCol = Integer.parseInt(input5.next());
+                    Collection colChoisi = collections.get(choixCol - 1);
+                    ArrayList<Livre> livres = colChoisi.getLivres();
+
+                    for (Livre livre2 : livres) {
+                        System.out.println(livre2.toString());
+                    }
+
+            
+
                     break;
                 case 3:
-                    // afficherLivresGenre();
+                    ArrayList<String> listGenre = new ArrayList<String>();
+                    listGenre = remplirListeGenre(bibliotheque);
+                    System.out.println("Liste des genre disponible :");
+                        for (int i1 = 0; i1 < listGenre.size(); i1++) {
+                        System.out.println((i1+1) + " -" + listGenre.get(i1));
+                        }
+                        System.out.println("Choisissez un genre :");
+                        Scanner input6 = new Scanner(System.in);
+                        int ChoixGenre = Integer.parseInt(input6.next());
+                        String choixGenre = listGenre.get(ChoixGenre);
+                        for (Livre livre1 : bibliotheque) {
+                            if (livre1.getGenre().equals(choixGenre)) {
+                            System.out.println(livre1.toString());
+                            }
+                        }
+                        
                     break;
                 case 4:
                     // afficherNombreTotalLivres();
+                    System.out.println("le nombre de livre dans la bibliotheque est de: "+Livre.afficheNbLivre());
                     break;
                 case 5:
                     // afficherLivresMaxPages();
@@ -301,5 +353,31 @@ public class ProjetBibliotheque {
             System.out.println();
         }
     }
+    public static ArrayList<String> remplirListeGenre(ArrayList<Livre> p)
+    {
+        ArrayList<String> listGenre = new ArrayList<String>();
+        for(Livre genre : p)
+        {
+            if(listGenre.contains(genre.getGenre()) == false)
+            {
+                listGenre.add(genre.getGenre());
+            }
+            if(listGenre.contains(genre.getGenre()) == false)
+            {
+                listGenre.add(genre.getGenre());
+            }
+        }
+        return listGenre;
+    }
+    public static void afficherLivreMax(ArrayList<Livre> bibliotheque) {
+    Livre livreMax = bibliotheque.get(0);
+    for (int i = 1; i < bibliotheque.size(); i++) {
+        Livre livre = bibliotheque.get(i);
+        if (livre.getNbPage() > livreMax.getNbPage()) {
+            livreMax = livre;
+        }
+    }
+    System.out.println("Le livre avec le plus de pages est : " + livreMax.toString());
+}
 
 } 
